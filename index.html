@@ -7,12 +7,81 @@
     <title>position</title>
 </head>
 <body>
-    <div class="wrapper">
+    <!-- <div class="wrapper">
         <img src="./4935920.jpg" alt="">
         <div class="box">
              <img src="./img.niti.jpg" alt="">
         </div>
-    </div>
+    </div> -->
     
+    <div class="container">
+
+        <h1>image gallery</h1>
+    
+        <div class="image-container">
+          <div class="image"><img src="./ass/img (1).jpg" alt="Linux"></div>
+          <div class="image"><img src="./ass/img (2).jpg" alt="Black linux"></div>
+          <div class="image"><img src="./ass/img (3).jpg" alt="Binary Tunnel"></div>
+          <div class="image"><img src="./ass/img (4).jpg" alt="plant"></div>
+          <div class="image"><img src="./ass/img (5).jpg" alt="Machine code"></div>
+          <div class="image"><img src="./ass/img (6).jpg" alt="Bash code"></div>
+        </div>
+    
+    
+        <div class="popup-image">
+          <span>&times;</span>
+          <img src="./ass/img (11).jpg" alt="">
+          <h2></h2>
+        </div>
+    
+    
+      </div>
+    
+      <!-- <script defer>
+    
+        document.querySelectorAll('.image-container img').forEach(image => {
+          image.onclick = () => {
+            document.querySelector('.popup-image').style.display = 'block';
+            document.querySelector('.popup-image img').src = image.getAttribute('src');
+          }
+        });
+    
+    
+        document.querySelector('.popup-image span').onclick = () => {
+          document.querySelector('.popup-image').style.display = 'none';
+        }
+        
+    
+      </script> -->
+    
+      <script defer>
+        document.querySelectorAll('.image-container img').forEach(image => {
+          image.onclick = () => {
+            // Display the popup
+            const popupImage = document.querySelector('.popup-image');
+            popupImage.style.display = 'block';
+      
+            // Set the image source in the popup
+            const popupImgElement = popupImage.querySelector('img');
+            popupImgElement.src = image.getAttribute('src');
+      
+            // Get and display image width, height, and name
+            const imgWidth = image.naturalWidth;
+            const imgHeight = image.naturalHeight;
+            const imgName = image.alt; // Assuming alt attribute contains the name
+      
+            // Display width, height, and name in the popup
+            const popupHeading = popupImage.querySelector('h2');
+            popupHeading.textContent = `${imgName} - ${imgWidth}x${imgHeight}`;
+          }
+        });
+      
+        document.querySelector('.popup-image span').onclick = () => {
+          // Close the popup when the close button is clicked
+          document.querySelector('.popup-image').style.display = 'none';
+        }
+      </script>
+      
+
 </body>
 </html>
